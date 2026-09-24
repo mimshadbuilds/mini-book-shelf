@@ -11,7 +11,7 @@ interface IBookCardProps {
 const BooksCard = ({ book }: IBookCardProps) => {
   return (
     <Link href={`/books/${book.bookId}`} className="block">
-      <article className="w-[342px] rounded-md border border-[#e5e5e5] bg-white p-3 transition-colors duration-200 hover:border-base-content/20">
+      <article className="w-full max-w-[342px] mx-auto rounded-md border border-[#e5e5e5] bg-white p-3 transition-colors duration-200 hover:border-base-content/20">
         <div className="flex h-52 w-full items-center justify-center rounded-lg bg-[#f5f5f5]">
           <Image
             src={book.image}

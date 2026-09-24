@@ -2,6 +2,8 @@ import Image from "next/image";
 import { IBook } from "@/types/books";
 import ReadBooksButton from "./ReadBooksBtn";
 import WishListButton from "./WishListBtn";
+import Link from "next/link";
+
 
 interface IBookDetailsCardProps {
     book: IBook;
@@ -9,9 +11,9 @@ interface IBookDetailsCardProps {
 
 const BookDetailsCard = ({ book }: IBookDetailsCardProps) => {
     return (
-        <article className="mx-auto grid w-full max-w-[1170px] overflow-hidden rounded-xl border border-[#e5e5e5] bg-white md:grid-cols-2">
-            <div className="flex min-h-[360px] items-center justify-center bg-[#f7f7f7] p-8 md:min-h-[500px] md:p-10">
-                <div className="relative h-[350px] w-full max-w-[370px]">
+        <article className="mx-auto grid w-full max-w-292.5 overflow-hidden rounded-xl border border-[#e5e5e5] bg-white md:grid-cols-2">
+            <div className="flex min-h-90 items-center justify-center bg-[#f7f7f7] p-8 md:min-h-125 md:p-10">
+                <div className="relative h-87.5 w-full max-w-92.5">
                     <Image
                         src={book.image}
                         alt={book.bookName}
@@ -79,9 +81,15 @@ const BookDetailsCard = ({ book }: IBookDetailsCardProps) => {
                     </div>
                 </div>
 
-                <div className="mt-4 flex gap-2">
-                    <ReadBooksButton book={book} />
-                    <WishListButton book={book} />
+                <div className="mt-4 flex justify-between items-end">
+                    <div className="flex gap-2">
+                        <ReadBooksButton book={book} />
+                        <WishListButton book={book} />
+                    </div>
+                    <Link href="/"
+                        className="rounded-md bg-green-500 px-3 py-2 text-[9px] font-semibold text-white transition-colors hover:bg-green-600">
+                        Explore Books
+                    </Link>
                 </div>
             </div>
         </article>

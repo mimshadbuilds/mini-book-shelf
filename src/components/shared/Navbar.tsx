@@ -9,9 +9,11 @@ const Navbar = () => {
     const pathname = usePathname();
     const links = 
     <>
-        <li><Link className={`links ${pathname === '/' ? 'text-blue-500' : 'text-slate-700'} font-semibold`} href='/'>Home</Link></li>
+        {/* <li><Link className={`links ${pathname === '/' ? 'text-blue-500' : 'text-slate-700'} font-semibold`} href='/'>Home</Link></li> */}
+        <li><Link className={`links ${pathname === '/' ? 'text-blue-500' : 'text-slate-700'} font-semibold`}  href='/'>Books</Link></li>
         <li><Link className={`links ${pathname === '/listed-books' ? 'text-blue-500' : 'text-slate-700'} font-semibold`}  href='/listed-books'>Listed Books</Link></li>
-        <li><Link className={`links ${pathname === '/books' ? 'text-blue-500' : 'text-slate-700'} font-semibold`}  href='/books'>Pages to Read</Link></li>
+        <li><Link className={`links ${pathname === '/read-books' ? 'text-blue-500' : 'text-slate-700'} font-semibold`}  href='/read-books'>Read Books</Link></li>
+
     </>
     return (
         <nav className="bg-base-100 shadow-sm">
@@ -37,7 +39,7 @@ const Navbar = () => {
                         </svg>
                     </div>
                     <ul tabIndex={-1}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow md:block hidden">
                     {links}
                     </ul>
                     </div>
