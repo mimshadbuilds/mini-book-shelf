@@ -81,7 +81,6 @@ const ReadBooks = () => {
                 <Bar dataKey="uv" shape={TriangleBar} activeBar>
                     <LabelList content={CustomColorLabel} position="top" />
                 </Bar>
-                {/* <RechartsDevtools /> */}
             </BarChart> 
             : <p className='text-3xl font-bold text-center my-15 '>No books to display!</p>
         }

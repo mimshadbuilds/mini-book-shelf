@@ -4,6 +4,7 @@ import Navbar from "@/components/shared/Navbar";
 import { Playfair_Display, Work_Sans } from "next/font/google";
 import BooksProvider from "@/Context/BookContext";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/components/shared/Footer";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -35,7 +36,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <Navbar />
             </nav>
           </header>
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
+          <Footer />
         </BooksProvider>
       </body>
     </html>
