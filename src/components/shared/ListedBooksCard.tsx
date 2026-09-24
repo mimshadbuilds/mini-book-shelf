@@ -1,18 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaRegCalendarAlt,
-  FaRegFileAlt,
-  FaUsers,
-} from "react-icons/fa";
-
+import { FaRegCalendarAlt, FaRegFileAlt, FaUsers } from "react-icons/fa";
 import { IBook } from "@/types/books";
 
-interface ReadBooksCardProps {
+interface ListedBooksCardProps {
     book: IBook;
 }
 
-const ReadBooksCard = ({ book }: ReadBooksCardProps) => {
+const ListedBooksCard = ({ book }: ListedBooksCardProps) => {
     return (
         <article className="mb-3 flex w-full min-h-[143px] gap-3 rounded-lg border border-[#e5e5e5] bg-white p-3">
             <div className="flex h-[116px] w-[116px] shrink-0 items-center justify-center rounded-lg bg-[#f5f5f5]">
@@ -42,8 +37,7 @@ const ReadBooksCard = ({ book }: ReadBooksCardProps) => {
                 {book.tags.slice(0, 2).map((tag) => (
                     <span
                     key={tag}
-                    className="rounded-full bg-green-50 px-2 py-1 text-[8px] font-medium leading-none text-green-600"
-                    >
+                    className="rounded-full bg-green-50 px-2 py-1 text-[8px] font-medium leading-none text-green-600">
                     #{tag}
                     </span>
                 ))}
@@ -77,10 +71,8 @@ const ReadBooksCard = ({ book }: ReadBooksCardProps) => {
                         Rating: {book.rating.toFixed(1)}
                     </span>
 
-                    <Link
-                        href={`/books/${book.bookId}`}
-                        className="rounded-full bg-green-500 px-3 py-1 text-[9px] font-semibold text-white transition-colors hover:bg-green-600"
-                    >
+                    <Link href={`/books/${book.bookId}`}
+                        className="rounded-full bg-green-500 px-3 py-1 text-[9px] font-semibold text-white transition-colors hover:bg-green-600">
                         View Details
                     </Link>
                 </div>
@@ -89,4 +81,4 @@ const ReadBooksCard = ({ book }: ReadBooksCardProps) => {
     );
 };
 
-export default ReadBooksCard;
+export default ListedBooksCard;

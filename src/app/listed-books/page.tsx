@@ -1,6 +1,5 @@
 'use client'
-import ReadBooksCard from '@/components/ListedBooks/ReadBooksTab';
-import WishListCard from '@/components/ListedBooks/WishListTab';
+import ListedBooksCard from '@/components/shared/ListedBooksCard';
 import { BooksContext } from '@/Context/BookContext';
 import { IBook } from '@/types/books';
 import { useContext } from 'react';
@@ -20,14 +19,14 @@ const ListedBooks = () => {
             <input type="radio" name="my_tabs_3" className="tab" aria-label={`Read Books (${readBooks.length})` }/>
             <div className="tab-content bg-base-100 border-base-300 p-6">
                 {readBooks.map((book: IBook) => {
-                    return <ReadBooksCard key={book.bookId} book={book} />
+                    return <ListedBooksCard key={book.bookId} book={book} />
                 })}
             </div>
 
             <input type="radio" name="my_tabs_3" className="tab" aria-label={`Wishlist Books (${wishList.length})`} defaultChecked />
             <div className="tab-content bg-base-100 border-base-300 p-6">
                 {wishList.map((book: IBook) => {
-                    return <WishListCard key={book.bookId} book={book} />
+                    return <ListedBooksCard key={book.bookId} book={book} />
                 })
                 }
             </div>
