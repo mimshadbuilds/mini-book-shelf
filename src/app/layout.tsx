@@ -26,8 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="light"
-      className={`${workSans.variable} h-full antialiased`}
-    >
+      className={`${workSans.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-(--font-work-sans)">
         <BooksProvider>
           <ToastContainer />

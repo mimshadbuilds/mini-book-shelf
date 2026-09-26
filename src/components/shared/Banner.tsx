@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import banner from '@/assets/hero-banner.png' 
 import { IoBookOutline } from 'react-icons/io5';
+import Link from "next/link";
+
 
 const Banner = () => {
     return (
@@ -11,9 +13,9 @@ const Banner = () => {
                         Books to freshen up <br /> <span className='text-[#00c187]'>your bookshelf</span>
                     </h2>
                     
-                    <button className='group flex items-center justify-center gap-2 px-4 md:px-8 py-2 md:py-4 bg-slate-950/90 text-white rounded-xl shadow-md backdrop-blur-sm hover:bg-[#00c187] transition duration-300 mx-auto md:mx-0'>
-                    <IoBookOutline className='pt-[0.8px]' /> View The List 
-                    </button>
+                    <Link href="/listed-books" className='group inline-flex items-center justify-center gap-2 px-4 md:px-8 py-2 md:py-4 bg-slate-950/90 text-white rounded-xl shadow-md backdrop-blur-sm hover:bg-[#00c187] transition duration-300 mx-auto md:mx-0'>
+                        <IoBookOutline className='pt-[0.8px]' /> View The List 
+                    </Link>
                 </div>
                 
                 <div className='relative flex justify-center'>
